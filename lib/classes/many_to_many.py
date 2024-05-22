@@ -1,4 +1,7 @@
 class Article:
+
+    all = []
+
     def __init__(self, author, magazine, title):
         self.author = author
         self.magazine = magazine
