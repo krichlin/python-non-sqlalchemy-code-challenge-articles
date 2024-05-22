@@ -6,6 +6,7 @@ class Article:
         self.author = author
         self.magazine = magazine
         self.title = title
+        Article.add_new_article(self)
     
     @property
     def title(self):
@@ -18,6 +19,11 @@ class Article:
         if len(new_title) < 5 or len(new_title) > 50:
             raise ValueError("Title must be between 5 and 50 characters inclusive")
         self._title = new_title
+
+    @classmethod
+    def add_new_article(cls, new_article):
+        cls.all.append(new_article)
+
 
 class Author:
     def __init__(self, name):
